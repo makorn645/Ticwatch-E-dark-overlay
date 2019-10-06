@@ -1,20 +1,30 @@
-# Ticwatch E Dark Overlay
+# Ticwatch E Theme Overlays
 
-This overlay is used to apply the default WearOS dark theme to the Ticwatch E.
+This overlay is used to apply WearOS dark theme with custom colors to the Ticwatch E.
 
 ## How to install this overlay
+
 1: Download overlay package in releases folder.
-2: Connect usb cable to PC and enable ADB Debugging.
+
+2: Connect device to PC and enable USB ADB Debugging.
+
 3: Run these adb commands
-`adb install <overlay location>` 
-`adb shell cmd overlay enable --user 0 com.makorn645.darkoverlay`
+
+`adb install <color>.apk` 
+
+`adb shell cmd overlay enable --user 0 com.makorn645.theme.<color>`
+
 `adb shell reboot`
-4: The device will reboot once and the overlay will be applied.
-Notes: This is not persistent so if you happen to reset your watch the overlay will be removed.
 
 ## How to uninstall this overlay
-1: Navigate to `settings > Apps Notifications > App Info > com.makorn645.darkoverlay > uninstall`
-2: Reboot device.
+
+1: Connect device to PC and enable USB ADB Debugging.
+
+2: Run these adb commands
+
+`adb shell cmd overlay disable --user 0 com.makorn645.theme.<color>`
+
+`adb uninstall com.makorn645.theme.<color>`
 
 ## Screens
 ![Quick Settings](/images/1.png)
